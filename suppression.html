@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppression de Compte</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function handleSubmit() {
+            var form = document.getElementById("deletionForm");
+            form.style.display = "none";
+
+            var confirmation = document.getElementById("confirmationMessage");
+            confirmation.style.display = "block";
+
+            // Prevent form submission
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        Demande de Suppression de Compte
+                    </div>
+                    <div class="card-body">
+                        <form id="deletionForm" onsubmit="return handleSubmit();">
+                            <div class="form-group">
+                                <label for="phoneNumber">Numéro de téléphone:</label>
+                                <input type="tel" class="form-control" id="phoneNumber" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Soumettre</button>
+                        </form>
+                        <div id="confirmationMessage" style="display:none;">
+                            <p>Votre demande de suppression de compte a bien été prise en compte et sera traitée sous 24h.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
